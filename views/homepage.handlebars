@@ -1,0 +1,30 @@
+<div class="hero-section">
+  <h1>Welcome to My Recipe Website</h1>
+  <p>Discover delicious recipes that you can make at home.</p>
+  <a href="/recipes" class="btn btn-primary">View all recipes</a>
+</div>
+
+<div class="featured-section">
+  <h2>Popular Recipes</h2>
+  <ul>
+    {{#each popularRecipes}}
+      <li><a href="/recipes/{{this.id}}">{{this.name}}</a></li>
+    {{/each}}
+  </ul>
+  <a href="/recipes" class="btn btn-secondary">View all recipes</a>
+</div>
+
+<div class="unique-feature-section">
+  <h2>What makes us unique?</h2>
+  <p>Our website offers a unique feature that allows you to search for recipes based on ingredients you already have in your pantry. Try it out now!</p>
+  <a href="/search" class="btn btn-primary">Search for recipes</a>
+</div>
+
+<div class="categories-section">
+  <h2>Browse by category</h2>
+  <ul>
+    {{#each categories}}
+      <li><a href="/recipes?category={{this}}">{{this}}</a></li>
+    {{/each}}
+  </ul>
+</div>
