@@ -1,6 +1,7 @@
 // server.js
 const express = require('express');
 const exphbs = require('express-handlebars');
+const path = require('path'); // Import the path module
 const app = express();
 const port = 3000;
 
@@ -9,7 +10,8 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 // Serve static files from the public folder
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Set up your routes here
 // Render the homepage
@@ -21,6 +23,7 @@ app.get('/', (req, res) => {
   app.get('/login', (req, res) => {
     res.render('login');
   });
+
 
 // Start the server
 app.listen(port, () => {
