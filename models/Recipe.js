@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class RecipeModel extends Model {}
 
-class Recipe extends Model {}
-
-Recipe.init(
+RecipeModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -20,9 +19,8 @@ Recipe.init(
       type: DataTypes.STRING,
     },
     ingredients: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -31,7 +29,6 @@ Recipe.init(
         key: 'id',
       },
     },
-    
   },
   {
     sequelize,
@@ -39,6 +36,6 @@ Recipe.init(
     underscored: true,
     modelName: 'recipe',
   }
-  );
+);
 
-  module.exports = Recipe;
+module.exports = Recipe;
