@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class RecipeModel extends Model {}
+class Recipe extends Model {}
 
-RecipeModel.init(
+Recipe.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,10 +24,10 @@ RecipeModel.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      // references: {
+      //   model: 'user',
+      //   key: 'id',
+      // },
     },
   },
   {
