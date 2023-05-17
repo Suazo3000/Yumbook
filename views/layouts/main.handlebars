@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
    
     <!-- include any necessary CSS or JavaScript files here -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="/css/style.css">
     
     <title>{{title}}</title>
-
-
 </head>
 <body>
     <header>
@@ -31,6 +27,20 @@
     <main>
         {{!-- this is where the content of each page will be inserted --}}
         {{{body}}}
+    </main>
+
+    <main>
+        <div class="recipe-container">
+            {{!-- Loop over your recipe data and render recipe cards --}}
+            {{#each recipe}}
+                <div class="recipe-card">
+                    <img src="{{this.image}}" alt="{{this.name}}">
+                    <h3>{{this.name}}</h3>
+                    <p>{{this.description}}</p>
+                    <!-- Add any additional recipe details as needed -->
+                </div>
+            {{/each}}
+        </div>
     </main>
 
     <footer>
