@@ -4,76 +4,45 @@
 
   <div class = "hero-search-bar">
     <input type= "text" class="search-content" placeholder="Serach for a recipe" id = "search-input">
-    <button type= "submit" class="search-btn" id="search-btn"><i class="fas fa-search"></i></button>
+    <button type= "submit" class="search-btn-1" id="search-btn"><i class="fas fa-search"></i></button>
   </div>
 
+
+<div class="hero-section">
+  <!-- hero section content -->
+</div>
 
 <div class="recipe-result">
   <h2 class="title">Search Results:</h2>
   <div id="meal">
-<!-- recipe search item -->
-<div class = "recipe-item">
-  <div class="recipe-img-box">
-    <img class="recipe-img" src="/images/salad.jpg" alt="food">
-  </div>
-  <div class="recipe-name">
-    <h3>Salad</h3>
-    <a href="#" class="recipe-btn">Get Recipe</a>
-  </div>
-</div>
-</div>
-
-</div>
-  <!-- recipe search item -->
-
-  <!-- recipe search item -->
-<div class = "recipe-item">
-  <div class="recipe-img-box">
-    <img class="recipe-img" src="/images/salad.jpg" alt="food">
-  </div>
-  <div class="recipe-name">
-    <h3>Salad</h3>
-    <a href="#" class="recipe-btn">Get Recipe</a>
-  </div>
-</div>
-</div>
-
-</div>
-  <!-- recipe search item -->
-
-  <!-- recipe search item -->
-<div class = "recipe-item">
-  <div class="recipe-img-box">
-    <img class="recipe-img" src="/images/salad.jpg" alt="food">
-  </div>
-  <div class="recipe-name">
-    <h3>Salad</h3>
-    <a href="#" class="recipe-btn">Get Recipe</a>
-  </div>
-</div>
-</div>
-
-</div>
-  <!-- recipe search item -->
-
-</div>
-<div class="featured-section">
-  <h2>Popular Recipes</h2>
-  <ul>
-    {{#each popularRecipes}}
-      <li><a href="/recipes/{{this.id}}">{{this.name}}</a></li>
+    <!-- recipe search item -->
+    {{#each recipes}}
+      <div class="recipe-item" data-id="{{this.recipeId}}">
+        <div class="recipe-img-box">
+          <img class="recipe-img" src="{{this.recipeImage}}" alt="food">
+        </div>
+        <div class="recipe-name">
+          <h3>{{this.recipeTitle}}</h3>
+          <a href="#" class="recipe-btn">Get Recipe</a>
+        </div>
+      </div>
     {{/each}}
-  </ul>
-  <a href="/recipes" class="btn btn-secondary">View all recipes</a>
+    <!-- recipe search item End -->
+  </div>
 </div>
 
-
-
-<div class="categories-section">
-  <h2>Browse by category</h2>
-  <ul>
-    {{#each categories}}
-      <li><a href="/recipes?category={{this}}">{{this}}</a></li>
+<script id="recipe-template-1" type="text/x-handlebars-template">
+  {{!-- Handlebars template code --}}
+  <div class="recipe-container">
+    {{#each recipes}}
+      <div class="recipe-card">
+        <img src="{{this.image}}" alt="{{this.name}}">
+        <h3>{{this.name}}</h3>
+        <p>{{this.description}}</p>
+        <!-- Add any additional recipe details as needed -->
+      </div>
     {{/each}}
-  </ul>
-</div>
+  </div>
+</script>
+
+<script src="/js/recipe.js"></script>

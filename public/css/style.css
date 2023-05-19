@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
 
-html {
+*{
+  font-family: 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 2s linear;
 }
+
+html {
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  
+}
+
 
 body {
   font-weight: 300;
@@ -15,9 +29,44 @@ body {
 }
 
 header {
-  background-color: #eee;
-  padding: 10px 20px;
+  /* position: fixed; */
+  top: 0; left: 0; right: 0;
+  background-color: #fff;
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  /* box-shadow: var(--box-shadow); */
 }
+
+header .logo{
+  color: aqua;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+header .navbar a{
+  font-size: 1rem;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  color: #000; 
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+  color: #000;
+  background-color: rgb(0, 255, 42);
+}
+
+header .icon i:hover,
+header .icon a:hover{
+  color:#000;
+  background: rgb(0, 255, 42);
+  transform: rotate(360deg);
+
+}
+
 
 .btn {
   font-family: 'Oswald', sans-serif;
@@ -79,7 +128,7 @@ header {
   overflow: hidden;
   box-shadow: 0 5px 25px -15px rgb(0, 0, 0, 1);
   margin: 2rem 0;
-  width: 40%;
+  /* width: 100%; */
 }
 
 .recipe-img {
@@ -118,8 +167,13 @@ header {
   background: rgb(0, 255, 42);
 }
 
+.recipe-details{
+
+}
+
+
 /* Media queries */
-@media screen (min-width: 600px) {
+@media screen and (min-width: 600px) {
   .hero-search-bar {
     width: 540px;
     margin-left: auto;
@@ -127,19 +181,31 @@ header {
   }
 }
 
-@media screen (min-width: 768px) {
+@media screen and (min-width: 768px) {
   #meal {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .recipe-img{
+    margin: 0;
+  }
 }
+
+@media screen and (min-width: 992px){
+  #meal{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+  
+
 
 nav ul {
   margin: 0;
   padding: 0;
-  list-style:
-none;
+  list-style:none;
+  text-decoration: none;
 }
 
 nav ul li {
