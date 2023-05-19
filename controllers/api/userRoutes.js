@@ -2,6 +2,18 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
 
+// Create a user signup
+router.post('/signup', async (req, res) => {
+  try {
+    const newUserSignup = await User.create(req.body);
+    res.status(201).json(newUserSignup);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to SignUp new user'})
+  }
+});
+
+
 // Create a new user
 router.post('/', async (req, res) => {
   try {
