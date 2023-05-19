@@ -6,15 +6,15 @@ signupForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   // input values
-  const username = document.querySelector('#username').value.trim();
+  const email = document.querySelector('#username').value.trim();
   const password = document.querySelector('#password').value.trim();
 
   // Perform form validation
-  if (username && password) {
+  if (email && password) {
     try {
       const response = await fetch('/api/users/signup', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
 
