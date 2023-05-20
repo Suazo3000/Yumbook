@@ -5,7 +5,7 @@ const searchInput = document.getElementById('search-input');
 
 // Event listeners
 searchBtn.addEventListener('click', getRecipesList);
-searchInput.addEventListener('keyup', function(event) {
+searchInput.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
     getRecipesList();
   }
@@ -19,35 +19,40 @@ function getRecipesList() {
   const applicationId = '2ae87e38';
   const applicationKey = '41a3d8a8bd10b628606cd773556b2a8e';
 
-  const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=${searchInputTxt}&app_id=${applicationId}&app_key=${applicationKey}`;
+  const recipeApiUrl = `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=${searchInputTxt}&app_id=${applicationId}&app_key=${applicationKey}`;
 
-  fetch(apiUrl)
+  fetch(recipeApiUrl)
     .then(response => response.json())
     .then(data => {
       console.log(data);
       let recipes = [];
+      const recipeEl = document.createElement('p')
+      const recipeContainer = document.createElement('div')
       if (data.hits) {
         data.hits.forEach(hit => {
           const recipe = hit.recipe;
           const recipeId = recipe.uri;
           const recipeImage = recipe.image;
           const recipeTitle = recipe.label;
-
-          recipes.push({
-            recipeId: recipeId,
-            recipeImage: recipeImage,
-            recipeTitle: recipeTitle
-          });
+          console.log(recipe)
+          recipeEl.textContent = recipe.calories
+          // recipes.push({
+          //   recipeId: recipeId,
+          //   recipeImage: recipeImage,
+          //   recipeTitle: recipeTitle
+          // });
+          recipeContainer.append(recipeEl)
+          document.querySelector('.recipe-result').append(recipeContainer)
         });
       }
 
-    // Handlebars template rendering
-      const template = Handlebars.compile(document.getElementById('recipe-template-1').innerHTML);
-      const html = template({ recipes: recipes });
-      mealList.innerHTML = html;
+      // Handlebars template rendering
+      // const template = Handlebars.compile(document.getElementById('recipe-template-1').innerHTML);
+      // const html = template({ recipes: recipes });
+      // mealList.innerHTML = html;
 
     })
     .catch(error => {
       console.error('Error:', error);
     });
-  }
+}
