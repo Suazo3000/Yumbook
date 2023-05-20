@@ -35,13 +35,24 @@ function getRecipesList() {
           const recipeImage = recipe.image;
           const recipeTitle = recipe.label;
           console.log(recipe)
-          recipeEl.textContent = recipe.calories
+          recipeContainer.innerHTML += 
+              `<div class="recipe-item" >
+                <div class="recipe-img-box">
+                  <img class="recipe-img" src="${recipe.images.SMALL.url}" alt="food"></img>
+                  </div>
+                  <div class="recipe-name">
+                    <h3>${recipe.label}</h3>
+                    <a href="${recipe.url}" class="recipe-btn">Get Recipe</a>
+                </div>
+                <p>Calories:${recipe.calories}</p>
+              </div>`
+          //recipeEl.textContent = recipe.calories
           // recipes.push({
           //   recipeId: recipeId,
           //   recipeImage: recipeImage,
           //   recipeTitle: recipeTitle
           // });
-          recipeContainer.append(recipeEl)
+          //recipeContainer.append(recipeEl)
           document.querySelector('.recipe-result').append(recipeContainer)
         });
       }
