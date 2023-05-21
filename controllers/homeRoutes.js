@@ -37,4 +37,27 @@ router.get('/signup', async (req, res) => {
   }
 }
 )
+
+// Render the homepage page
+router.get('/home', async (req, res) => {
+  try {
+    res.render('homepage', {});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to render homepage page'})
+  }
+}
+)
+
+// Render the recipe page
+router.get('/recipes', async (req, res) => {
+  try {
+ 
+    res.render('recipe', {});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to render recipe page'})
+  }
+}
+)
 module.exports = router;
