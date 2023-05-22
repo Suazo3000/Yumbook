@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection.js');
+const User = require('./User')
 
-class Recipe extends Model { }
+class Journal extends Model { }
 
-Recipe.init(
+Journal.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,31 +12,27 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    ingredients: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'user',
-      //   key: 'id',
-      // },
-    },
+      references: {
+        key: 'id',
+        model: User
+      }
+    }
   },
   {
     sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'recipe',
+    timestamps: false,
+    modelName: 'journal',
   }
 );
 
-module.exports = Recipe;
+module.exports = Journal;

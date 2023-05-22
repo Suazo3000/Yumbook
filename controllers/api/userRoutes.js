@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User } = require('../../models');
+const { Journal } = require("../../models")
 
 // Create a user signup
 router.post('/signup', async (req, res) => {
@@ -111,6 +112,19 @@ router.delete('/:id', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to delete user' });
+  }
+});
+
+// Create a new Journal
+router.post('/journal', async (req, res) => {
+  try {
+    console.log('journal data from fe ===', req.body);
+    const newJournal = await Journal.create(req.body);
+    
+    res.status(201).json(newJournal);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to create journal' });
   }
 });
 
