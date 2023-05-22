@@ -37,26 +37,20 @@ function getRecipesList() {
           console.log(recipe)
           recipeContainer.innerHTML += 
               `<div class="recipe-item" >
-                <div class="recipe-img-box">
-                  <img class="recipe-img" src="${recipe.images.SMALL.url}" alt="food"></img>
+                  <div class="recipe-img-box">
+                      <img class="recipe-img" src="${recipe.images.LARGE.url}" alt="food"></img>
                   </div>
                   <div class="recipe-name">
-                    <h3>${recipe.label}</h3>
-                    <a href="${recipe.url}" class="recipe-btn">Get Recipe</a>
+                      <h2>${recipe.label}</h2> <a href="#" class="fas fa-heart"></a>
+                      <a href="${recipe.url}" class="recipe-btn">Get Recipe</a>
+                  </div>
+                    <h4>Calories:${recipe.calories}</h4>
                 </div>
-                <p>Calories:${recipe.calories}</p>
-              </div>`
-          //recipeEl.textContent = recipe.calories
-          // recipes.push({
-          //   recipeId: recipeId,
-          //   recipeImage: recipeImage,
-          //   recipeTitle: recipeTitle
-          // });
-          //recipeContainer.append(recipeEl)
+              `;
           document.querySelector('.recipe-result').append(recipeContainer)
         });
-      }
 
+      }
       // Handlebars template rendering
       // const template = Handlebars.compile(document.getElementById('recipe-template-1').innerHTML);
       // const html = template({ recipes: recipes });
