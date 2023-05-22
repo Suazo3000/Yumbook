@@ -25,12 +25,13 @@
 
 body {
   background: #191919;
+  color: #fff;
   font-weight: 300;
   font-size: 1.05rem;
   margin: 0;
   padding-top: 75px;
   font-family: 'Roboto', sans-serif;
-  background-image: url(https://img.freepik.com/free-photo/food-with-ingredients_1220-4884.jpg?w=996&t=st=1684791753~exp=1684792353~hmac=703d50526466f13a09756c91e67627f28b121d70949b4193d77f15eb7f1cd9b6);
+  background-image: url(https://img.freepik.com/free-photo/flat-lay-composition-mexican-food-with-copyspace_23-2148140347.jpg?w=1380&t=st=1684796211~exp=1684796811~hmac=52df98b2ae855bf5ec63ddd4cebcede3c799a51d7acaf02263cab03cde3b8f85);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,6 +68,15 @@ header .navbar a{
   border-radius: .5rem;
   padding: .5rem .5rem;
   color: rgb(255, 255, 255); 
+}
+
+.user-button a{
+  font-size: 1.25rem;
+  margin-left: 2rem;
+  border-radius: .5rem;
+  padding: .5rem .5rem;
+  color: rgb(0, 0, 0); 
+  background-color: rgb(235, 223, 0);
 }
 
 
@@ -204,6 +214,28 @@ header .icon a:hover{
 
 }
 
+.login-form{
+  /* background-color: #000000; */
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 1.50rem;
+ 
+}
+
+.login-btn{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+  display: block;
+  width: 100px;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+}
 
 /* Media queries */
 
