@@ -127,5 +127,20 @@ router.post('/journal', async (req, res) => {
     res.status(500).json({ error: 'Failed to create journal' });
   }
 });
+// Get all journal entries for a user
+router.get('/journal', async (req, res) => {
+  try {
+    // Fetch the journal entries from the database based on the user ID
+    const journalEntries = await Journal.findAll({
+      where: { user_id: req.session.user_id }, // Adjust based on your user ID retrieval method
+    });
+
+    // Respond with the journal entries in JSON format
+    res.json(journalEntries);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to fetch journal entries' });
+  }
+});
 
 module.exports = router;

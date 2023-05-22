@@ -71,5 +71,14 @@ router.get('/journal', async (req, res) => {
   }
 }
 )
+// Render the Team page
+router.get('/team', async (req, res) => {
+  try {
+    res.render('team', {});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to render the Team page' });
+  }
+});
 
 module.exports = router;

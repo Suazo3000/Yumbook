@@ -13,4 +13,18 @@
   </form>
 </div>
 
+
+<div class="journal-entries">
+  <h2>My Journal Entries</h2>
+  <ul>
+    {{#each journalEntries}}
+      <li>
+        <h3>{{this.title}}</h3>
+        <p>{{this.content}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+
 <script src="/js/journal.js"></script>
