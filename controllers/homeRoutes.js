@@ -60,4 +60,16 @@ router.get('/recipes', async (req, res) => {
   }
 }
 )
+// Render the journal page
+router.get('/journal', async (req, res) => {
+  try {
+ 
+    res.render('journal', {});
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to render journal page'})
+  }
+}
+)
+
 module.exports = router;
