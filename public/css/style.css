@@ -237,6 +237,11 @@ header .icon a:hover{
   transition: all 0.4s linear;
 }
 
+.journal-form{
+  color: #000000;
+  text-align: center;
+}
+
 /* Media queries */
 
 @media screen and (min-width: 998px){
