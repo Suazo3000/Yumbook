@@ -1,0 +1,16 @@
+<div class="journal-form">
+  <h2>Create a New Journal Entry</h2>
+  <form action="/journal" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="journal-form-input" type="text" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <textarea class="journal-form-input" id="content" name="content" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary save_btn">Save Journal Entry</button>
+  </form>
+</div>
+
+<script src="/js/journal.js"></script>

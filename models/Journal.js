@@ -1,9 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 const User = require('./User')
-class Journal extends Model {
-  
-}
+
+class Journal extends Model { }
 
 Journal.init(
   {
@@ -17,25 +16,23 @@ Journal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    decription: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
-      
     },
     user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            key: 'id', 
-            model: User
-        }
+      type: DataTypes.INTEGER,
+      references: {
+        key: 'id',
+        model: User
+      }
     }
-    
   },
   {
     sequelize,
     timestamps: false,
-    modelName: 'user',
+    modelName: 'journal',
   }
 );
 
-module.exports = User;
+module.exports = Journal;
