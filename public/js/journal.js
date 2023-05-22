@@ -43,7 +43,7 @@ const journalFormHandler = async (event) => {
     if (title && content) {
       // Send a POST request to create a new journal entry
 
-      const response = await fetch('/api/user/journal', {
+      const response = await fetch('/api/users/journal', {
         method: 'POST',
         body: JSON.stringify({ title, content, user_id: user ? user.id : 0 }),
         headers: { 'Content-Type': 'application/json' },
