@@ -1,4 +1,7 @@
-USE yumbook_db;
+DROP DATABASE IF EXISTS yumbook_db;
+CREATE DATABASE yumbook_db;
+-- USE yumbook_db;
+
 
 
 -- CREATE TABLE IF NOT EXISTS Users (
