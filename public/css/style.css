@@ -237,6 +237,29 @@ header .icon a:hover{
   transition: all 0.4s linear;
 }
 
+.signup-form{
+  /* background-color: #000000; */
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 1.50rem;
+}
+.signup-btn{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.75rem 0;
+  display: block;
+  width: 100px;
+  margin: 1rem auto;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+}
+
+ 
+
 .journal-form{
   color: #000000;
   text-align: center;
